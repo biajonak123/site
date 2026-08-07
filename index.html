@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura Interativa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🌳 Aventura Interativa</h1>
+</header>
+
+<main>
+
+<section class="passo ativo" id="passo-0">
+    <p>Você encontrou um mapa do tesouro. O que deseja fazer?</p>
+
+    <button data-proximo="1">Seguir o mapa</button>
+    <button data-proximo="2">Voltar para casa</button>
+</section>
+
+<section class="passo" id="passo-1">
+    <p>Você chegou a uma ponte antiga.</p>
+
+    <button data-proximo="3">Atravessar</button>
+    <button data-proximo="4">Voltar</button>
+</section>
+
+<section class="passo" id="passo-2">
+    <p>Você decidiu voltar para casa. Fim da aventura.</p>
+
+    <button data-proximo="0">Jogar novamente</button>
+</section>
+
+<section class="passo" id="passo-3">
+    <p>🎉 Parabéns! Você encontrou o tesouro!</p>
+
+    <button data-proximo="0">Jogar novamente</button>
+</section>
+
+<section class="passo" id="passo-4">
+    <p>Você caiu em uma armadilha. Fim da aventura.</p>
+
+    <button data-proximo="0">Tentar novamente</button>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
