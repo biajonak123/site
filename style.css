@@ -1,41 +1,409 @@
-body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:#1d3557;
-    color:white;
-    text-align:center;
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    box-sizing: border-box;
 }
 
-header{
-    background:#457b9d;
-    padding:20px;
+html {
+    scroll-behavior: smooth;
 }
 
-main{
-    max-width:700px;
-    margin:auto;
-    padding:40px;
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #ffffff;
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(69, 123, 157, 0.5),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #081c15,
+            #1d3557,
+            #14213d
+        );
+
+    background-attachment: fixed;
 }
 
-.passo{
-    display:none;
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+header {
+    padding: 28px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #457b9d,
+            #2a9d8f
+        );
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.ativo{
-    display:block;
+header h1 {
+    margin: 0;
+
+    font-size: clamp(28px, 5vw, 42px);
+
+    text-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.4);
 }
 
-button{
-    margin:10px;
-    padding:12px 24px;
-    border:none;
-    border-radius:8px;
-    background:#e63946;
-    color:white;
-    cursor:pointer;
-    font-size:16px;
+header p {
+    margin: 10px 0 0;
+
+    color: #dbeafe;
+
+    font-size: 16px;
 }
 
-button:hover{
-    background:#d62828;
+
+/* ========================================
+   ÁREA PRINCIPAL
+======================================== */
+
+main {
+    width: min(700px, calc(100% - 30px));
+
+    margin: auto;
+
+    padding: 50px 20px;
+}
+
+
+/* ========================================
+   ETAPAS
+======================================== */
+
+.passo {
+    display: none;
+
+    padding: 40px 30px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.12),
+            rgba(255, 255, 255, 0.05)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+
+    backdrop-filter: blur(14px);
+
+    animation: aparecer 0.45s ease;
+}
+
+.passo.ativo {
+    display: block;
+}
+
+
+/* ========================================
+   TÍTULOS
+======================================== */
+
+.passo h2 {
+    margin: 0 0 18px;
+
+    font-size: clamp(25px, 5vw, 36px);
+
+    color: #ffffff;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ========================================
+   TEXTOS
+======================================== */
+
+.passo p {
+    max-width: 600px;
+
+    margin: 0 auto 30px;
+
+    color: #e5e7eb;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   OPÇÕES
+======================================== */
+
+.opcoes {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+}
+
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+button {
+    margin: 8px;
+
+    min-width: 190px;
+
+    padding: 14px 24px;
+
+    border: none;
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e63946,
+            #c9184a
+        );
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* Mouse sobre o botão */
+
+button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #ff4d5a,
+            #e01e5a
+        );
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 22px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Clique */
+
+button:active {
+    transform: translateY(0);
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Teclado */
+
+button:focus-visible {
+    outline: 3px solid #ffd166;
+
+    outline-offset: 4px;
+}
+
+
+/* ========================================
+   RESULTADO
+======================================== */
+
+.resultado {
+    margin: 25px auto;
+
+    padding: 18px;
+
+    border-radius: 14px;
+
+    background: rgba(0, 0, 0, 0.2);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    font-size: 18px;
+}
+
+
+/* ========================================
+   VITÓRIA
+======================================== */
+
+.sucesso {
+    border-color:
+        rgba(46, 204, 113, 0.5);
+
+    box-shadow:
+        0 20px 60px
+        rgba(46, 204, 113, 0.15);
+}
+
+.sucesso .resultado {
+    background:
+        rgba(46, 204, 113, 0.15);
+
+    color: #86efac;
+}
+
+
+/* ========================================
+   PERIGO
+======================================== */
+
+.perigo {
+    border-color:
+        rgba(230, 57, 70, 0.5);
+
+    box-shadow:
+        0 20px 60px
+        rgba(230, 57, 70, 0.15);
+}
+
+.perigo .resultado {
+    background:
+        rgba(230, 57, 70, 0.15);
+
+    color: #fca5a5;
+}
+
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+footer {
+    margin-top: auto;
+
+    padding: 25px 20px;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+}
+
+
+/* ========================================
+   ANIMAÇÃO
+======================================== */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* ========================================
+   CELULAR
+======================================== */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 22px 15px;
+    }
+
+    main {
+        width: 92%;
+
+        padding: 30px 0;
+    }
+
+    .passo {
+        padding: 30px 20px;
+
+        border-radius: 18px;
+    }
+
+    .passo p {
+        font-size: 17px;
+
+        line-height: 1.6;
+    }
+
+    .opcoes {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+
+        max-width: 320px;
+
+        margin: 6px 0;
+    }
+}
+
+
+/* ========================================
+   ACESSIBILIDADE
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .passo {
+        animation: none;
+    }
+
+    button {
+        transition: none;
+    }
 }

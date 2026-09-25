@@ -1,54 +1,196 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aventura Interativa</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Aventura interativa onde suas escolhas determinam o destino da história."
+    >
+
+    <title>Aventura Interativa 🌳</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-    <h1>🌳 Aventura Interativa</h1>
-</header>
+    <header>
+        <h1>🌳 Aventura Interativa</h1>
+        <p>Suas escolhas mudam a história.</p>
+    </header>
 
-<main>
+    <main>
 
-<section class="passo ativo" id="passo-0">
-    <p>Você encontrou um mapa do tesouro. O que deseja fazer?</p>
+        <!-- PASSO 0 -->
 
-    <button data-proximo="1">Seguir o mapa</button>
-    <button data-proximo="2">Voltar para casa</button>
-</section>
+        <section
+            class="passo ativo"
+            id="passo-0"
+        >
 
-<section class="passo" id="passo-1">
-    <p>Você chegou a uma ponte antiga.</p>
+            <h2>🗺️ O mapa misterioso</h2>
 
-    <button data-proximo="3">Atravessar</button>
-    <button data-proximo="4">Voltar</button>
-</section>
+            <p>
+                Você encontrou um mapa do tesouro.
+                O que deseja fazer?
+            </p>
 
-<section class="passo" id="passo-2">
-    <p>Você decidiu voltar para casa. Fim da aventura.</p>
+            <div class="opcoes">
 
-    <button data-proximo="0">Jogar novamente</button>
-</section>
+                <button
+                    type="button"
+                    data-proximo="1"
+                >
+                    🗺️ Seguir o mapa
+                </button>
 
-<section class="passo" id="passo-3">
-    <p>🎉 Parabéns! Você encontrou o tesouro!</p>
+                <button
+                    type="button"
+                    data-proximo="2"
+                >
+                    🏠 Voltar para casa
+                </button>
 
-    <button data-proximo="0">Jogar novamente</button>
-</section>
+            </div>
 
-<section class="passo" id="passo-4">
-    <p>Você caiu em uma armadilha. Fim da aventura.</p>
+        </section>
 
-    <button data-proximo="0">Tentar novamente</button>
-</section>
 
-</main>
+        <!-- PASSO 1 -->
 
-<script src="script.js"></script>
+        <section
+            class="passo"
+            id="passo-1"
+        >
+
+            <h2>🌉 A ponte antiga</h2>
+
+            <p>
+                Você chegou a uma ponte antiga.
+                Ela parece perigosa, mas existe um caminho
+                do outro lado.
+            </p>
+
+            <div class="opcoes">
+
+                <button
+                    type="button"
+                    data-proximo="3"
+                >
+                    🚶 Atravessar
+                </button>
+
+                <button
+                    type="button"
+                    data-proximo="4"
+                >
+                    ↩️ Voltar
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- PASSO 2 -->
+
+        <section
+            class="passo"
+            id="passo-2"
+        >
+
+            <h2>🏠 De volta para casa</h2>
+
+            <p>
+                Você decidiu voltar para casa.
+                Fim da aventura.
+            </p>
+
+            <div class="resultado">
+                🏡 Talvez outra aventura esteja esperando por você.
+            </div>
+
+            <button
+                type="button"
+                data-proximo="0"
+            >
+                🔄 Jogar novamente
+            </button>
+
+        </section>
+
+
+        <!-- PASSO 3 -->
+
+        <section
+            class="passo sucesso"
+            id="passo-3"
+        >
+
+            <h2>🎉 Você encontrou o tesouro!</h2>
+
+            <p>
+                Você atravessou a ponte e encontrou
+                um enorme baú escondido entre as árvores.
+            </p>
+
+            <div class="resultado">
+                🏆 Parabéns, aventureiro!
+            </div>
+
+            <button
+                type="button"
+                data-proximo="0"
+            >
+                🔄 Jogar novamente
+            </button>
+
+        </section>
+
+
+        <!-- PASSO 4 -->
+
+        <section
+            class="passo perigo"
+            id="passo-4"
+        >
+
+            <h2>⚠️ Armadilha!</h2>
+
+            <p>
+                Você tentou atravessar a ponte,
+                mas caiu em uma antiga armadilha.
+                Fim da aventura.
+            </p>
+
+            <div class="resultado">
+                💀 Você não conseguiu chegar ao tesouro.
+            </div>
+
+            <button
+                type="button"
+                data-proximo="0"
+            >
+                🔄 Tentar novamente
+            </button>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>🌲 Aventura Interativa • Boa sorte, aventureiro!</p>
+    </footer>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
